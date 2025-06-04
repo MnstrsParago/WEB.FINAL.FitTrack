@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition - FitTrack</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.min.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-heartbeat me-2"></i>FitTrack
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="nutrition.html">Nutrition</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="community.html">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Nutrition Section -->
+    <section class="nutrition-section">
+      <div class="container">
+        <h1 class="page-title">Nutrition Tracker</h1>
+
+        <!-- Nutrition Goals -->
+        <div class="nutrition-goals">
+          <h2>Your Nutrition Goals</h2>
+          <div class="goals-grid">
+            <div class="goal-card">
+              <div class="goal-icon">
+                <i class="fas fa-fire"></i>
+              </div>
+              <div class="goal-details">
+                <h3>Daily Calories</h3>
+                <p class="goal-value" id="calorieGoal">2,000</p>
+                <button
+                  class="btn btn-sm btn-outline-primary edit-goal-btn"
+                  data-goal="calories"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+
+            <div class="goal-card">
+              <div class="goal-icon">
+                <i class="fas fa-drumstick-bite"></i>
+              </div>
+              <div class="goal-details">
+                <h3>Protein</h3>
+                <p class="goal-value" id="proteinGoal">150g</p>
+                <button
+                  class="btn btn-sm btn-outline-primary edit-goal-btn"
+                  data-goal="protein"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+
+            <div class="goal-card">
+              <div class="goal-icon">
+                <i class="fas fa-bread-slice"></i>
+              </div>
+              <div class="goal-details">
+                <h3>Carbs</h3>
+                <p class="goal-value" id="carbsGoal">200g</p>
+                <button
+                  class="btn btn-sm btn-outline-primary edit-goal-btn"
+                  data-goal="carbs"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+
+            <div class="goal-card">
+              <div class="goal-icon">
+                <i class="fas fa-oil-can"></i>
+              </div>
+              <div class="goal-details">
+                <h3>Fats</h3>
+                <p class="goal-value" id="fatsGoal">65g</p>
+                <button
+                  class="btn btn-sm btn-outline-primary edit-goal-btn"
+                  data-goal="fats"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Edit Goal Modal -->
+          <div
+            class="modal fade"
+            id="editGoalModal"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editGoalTitle">Edit Goal</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form id="editGoalForm">
+                    <div class="mb-3">
+                      <label for="goalValue" class="form-label"
+                        >New Value</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="goalValue"
+                      />
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="saveGoalBtn"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meal Tracker -->
+        <div class="meal-tracker">
+          <div class="section-header">
+            <h2>Meal Tracker</h2>
+            <button id="addMealBtn" class="btn btn-primary">
+              <i class="fas fa-plus"></i> Add Meal
+            </button>
+          </div>
+
+          <!-- Meal Form -->
+          <div id="mealForm" class="meal-form d-none">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="mealName" class="form-label">Meal Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="mealName"
+                  placeholder="e.g., Breakfast, Lunch, Snack"
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="foodItem" class="form-label">Food Item</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="foodItem"
+                  placeholder="e.g., Oatmeal with Berries"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="calories" class="form-label">Calories</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="calories"
+                  placeholder="e.g., 350"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="protein" class="form-label">Protein (g)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="protein"
+                  placeholder="e.g., 15"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="carbs" class="form-label">Carbs (g)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="carbs"
+                  placeholder="e.g., 45"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="fats" class="form-label">Fats (g)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="fats"
+                  placeholder="e.g., 10"
+                />
+              </div>
+            </div>
+            <div class="form-buttons">
+              <button id="saveMealBtn" class="btn btn-success">
+                Save Meal
+              </button>
+              <button id="cancelMealBtn" class="btn btn-secondary">
+                Cancel
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter Controls -->
+          <div class="filter-controls">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="calorieFilter" class="form-label"
+                  >Filter by Calories:</label
+                >
+                <div class="d-flex">
+                  <input
+                    type="number"
+                    class="form-control me-2"
+                    id="minCalories"
+                    placeholder="Min"
+                  />
+                  <input
+                    type="number"
+                    class="form-control me-2"
+                    id="maxCalories"
+                    placeholder="Max"
+                  />
+                  <button id="filterBtn" class="btn btn-outline-primary">
+                    Filter
+                  </button>
+                  <button
+                    id="resetFilterBtn"
+                    class="btn btn-outline-secondary ms-2"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meals Table -->
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Meal</th>
+                  <th>Food Item</th>
+                  <th>Calories</th>
+                  <th>Protein (g)</th>
+                  <th>Carbs (g)</th>
+                  <th>Fats (g)</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="mealsTableBody">
+                <!-- Meals will be added dynamically with JavaScript -->
+              </tbody>
+              <tfoot>
+                <tr class="table-active">
+                  <td colspan="2"><strong>Daily Total</strong></td>
+                  <td id="totalCalories">0</td>
+                  <td id="totalProtein">0</td>
+                  <td id="totalCarbs">0</td>
+                  <td id="totalFats">0</td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- Nutrition Summary -->
+        <div class="nutrition-summary">
+          <h2>Daily Nutrition Summary</h2>
+          <div class="summary-charts">
+            <div class="chart-container">
+              <canvas id="calorieChart"></canvas>
+            </div>
+            <div class="chart-container">
+              <canvas id="macroChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3><i class="fas fa-heartbeat me-2"></i>FitTrack</h3>
+            <p>Your companion for a healthier lifestyle.</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="nutrition.html">Nutrition</a></li>
+              <li><a href="community.html">Community</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FitTrack. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/script.min.js" type="module"></script>
+    <script src="./js/jquery-script.min.js" type="module"></script>
+  </body>
+</html>

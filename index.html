@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitTrack - Your Health & Fitness Companion</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.min.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-heartbeat me-2"></i>FitTrack
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nutrition.html">Nutrition</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="community.html">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Track Your Fitness Journey</h1>
+          <p>
+            Achieve your health and fitness goals with personalized tracking,
+            nutrition guidance, and community support.
+          </p>
+          <div class="hero-buttons">
+            <a href="register.html" class="btn btn-primary btn-lg"
+              >Get Started</a
+            >
+            <a href="#benefits" class="btn btn-outline-light btn-lg"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+      <div class="container">
+        <h2 class="section-title">Benefits of a Healthy Lifestyle</h2>
+        <div class="row benefits-container">
+          <div class="col-md-4">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3>Improved Health</h3>
+              <p>
+                Regular exercise and proper nutrition reduce the risk of heart
+                disease, diabetes, and other chronic conditions.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3>Mental Wellbeing</h3>
+              <p>
+                Physical activity releases endorphins, reducing stress and
+                improving your overall mental health.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3>Increased Energy</h3>
+              <p>
+                Proper nutrition and regular exercise boost your energy levels
+                and improve sleep quality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="section-title">FitTrack Features</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <i class="fas fa-chart-line"></i>
+            <h3>Activity Tracking</h3>
+            <p>Monitor your daily steps, workouts, and calories burned.</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-utensils"></i>
+            <h3>Nutrition Planning</h3>
+            <p>Track your meals and manage your daily calorie intake.</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-tasks"></i>
+            <h3>Goal Setting</h3>
+            <p>Set personalized fitness goals and track your progress.</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-users"></i>
+            <h3>Community Support</h3>
+            <p>Connect with like-minded individuals on your fitness journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Transform Your Life?</h2>
+          <p>
+            Join thousands of users who have already improved their health with
+            FitTrack.
+          </p>
+          <a href="register.html" class="btn btn-primary btn-lg">Sign Up Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3><i class="fas fa-heartbeat me-2"></i>FitTrack</h3>
+            <p>Your companion for a healthier lifestyle.</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="nutrition.html">Nutrition</a></li>
+              <li><a href="community.html">Community</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FitTrack. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/script.min.js" type="module"></script>
+    <script src="./js/jquery-script.min.js" type="module"></script>
+  </body>
+</html>
